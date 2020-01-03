@@ -2,6 +2,7 @@ import React from 'react'
 import '../NoteCard.css'
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
+import { Form, TextArea, Button } from 'semantic-ui-react'
 
 
 class NoteCard extends React.Component {
@@ -84,13 +85,13 @@ class NoteCard extends React.Component {
          <div className="Card" >
              <div>
              {this.state.edit ? 
-             <form onSubmit={event => this.handleSubmit(event)}>
+             <Form onSubmit={event => this.handleSubmit(event)}>
                  Title: <input 
                  type='text'
                  value={this.state.title}
                  onChange={event => this.changeTitleInput(event)}/>
 
-                 Content: < textarea type="text" 
+                 Content: < TextArea type="text" 
                  value={this.state.content}
                  onChange={event => this.changeContentInput(event)}/>
 
@@ -101,13 +102,16 @@ class NoteCard extends React.Component {
                  /> */}
 
                 < input type='submit' />
-             </form>
+             </Form>
                 :
                 <div>
                  <h6> {this.props.note.title} </h6>
                  <p>{this.props.note.content}</p>
                  {this.renderTags()}
-                <button onClick={this.handleDelete} > Delete </button> <button onClick={this.handleEdit}> Edit</button>
+                 <Button.Group basic>
+                    <Button onClick={this.handleDelete} > Delete </Button>
+                    <Button onClick={this.handleEdit}> Edit</Button>
+                </Button.Group>
                 </div>}
                 </div>
         </div>)

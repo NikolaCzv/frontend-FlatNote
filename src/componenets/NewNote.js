@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addNote } from '../actions/notes'
+import { Form, TextArea, Button } from 'semantic-ui-react'
 
 class NewNote extends React.Component {
 
@@ -53,11 +54,11 @@ class NewNote extends React.Component {
 
     render(){
         return <div className="newNote">
-            <form  onSubmit={(event) => this.handleSubmit(event)}>
+            <Form  onSubmit={(event) => this.handleSubmit(event)}>
                 Title: < input type="text" onChange={this.handleChangeTitle}/><br></br>
-                Content: < textarea type="text" onChange={this.handleChangeContent}/><br></br>
-                <input type="submit"/><br></br>
-            </form>
+                Content: < TextArea type="text" onChange={this.handleChangeContent}/><br></br>
+                <Button type="submit"> Submit </Button><br></br>
+            </Form>
             </div>
     }
 }

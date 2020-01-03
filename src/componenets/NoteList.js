@@ -4,16 +4,31 @@ import NoteCard from './NoteCard'
 import { renderNote } from '../actions/renderNote'
 import { deleteNote } from '../actions/deleteNote'
 import { editNote } from '../actions/editNote'
+import { Image, List, Grid } from 'semantic-ui-react'
 
 class NoteList extends React.Component {
 
     render(){
         console.log('afasf', this.props.user.login.notes.find(note => note.id === this.props.user.login.showNote))
-        return<div>
-                <h4>Note List</h4>
-                {this.props.user.login.notes.map(note => {
-                    return <div><li onClick={() => this.props.renderNote(note)}>{note.title}</li></div>
+        return  <Grid>
+            <Grid.Column floated='left' width={5}>
+                        <h4>Note List</h4>
+                            {this.props.user.login.notes.map(note => {
+                        return <List animated verticalAlign='middle'>
+                            <List.Item>
+                                <div>
+                                    <Image onClick={() => this.props.renderNote(note)} avatar src='https://www.becomingminimalist.com/wp-content/uploads/2008/07/post-it-note.jpg' />
+                                    <List.Content>
+                                        <List.Header >{note.title}</List.Header>
+                                    </List.Content>
+                                </div>
+                                </List.Item>
+                            </List>
                 })}
+                </Grid.Column>
+
+
+                <Grid.Column floated='right' width={5}>
                 <div>
                     {this.props.user.login.showNote ? 
                     < NoteCard
@@ -23,7 +38,8 @@ class NoteList extends React.Component {
                         /> :
                     null}
                 </div>
-            </div>
+                </Grid.Column>
+            </Grid>
     }
 
 }

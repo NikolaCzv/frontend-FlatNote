@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addUser } from '../actions/users'
+import { Button, Form, Image } from 'semantic-ui-react'
 
 class Login extends React.Component{
 
@@ -47,14 +48,15 @@ class Login extends React.Component{
     render(){
         return(
             <div className='login'>
-                <form onSubmit={(event) => this.handleSubmit(event)}>
+                <Image src='https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png' size='small' circular/>
+                <Form onSubmit={(event) => this.handleSubmit(event)}>
                     <h3>Login page</h3>
                     <input type="text"
                         onChange={(event) => this.handleChange(event)}
                         value={this.state.username}/>
                     <br></br>
-                    <input type="submit"/>
-                </form>
+                    <Button type='submit' basic color='white'>Submit</Button>
+                </Form>
             </div>
         )
     }
