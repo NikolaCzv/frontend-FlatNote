@@ -3,6 +3,7 @@ import '../NoteCard.css'
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
 
+
 class NoteCard extends React.Component {
 
     state = {
@@ -66,15 +67,15 @@ class NoteCard extends React.Component {
         })
     }
 
-    changeTagInput = event => {
-        this.setState({
-            tags: event.target.value
-        })
-    }
+    // changeTagInput = event => {
+    //     this.setState({
+    //         tags: event.target.value
+    //     })
+    // }
 
-    showTagName = () => {
-        return this.state.tags.map(tag => tag.name)
-    }
+    // showTagName = () => {
+    //     return this.state.tags.map(tag => tag.name)
+    // }
 
 
 
@@ -93,11 +94,11 @@ class NoteCard extends React.Component {
                  value={this.state.content}
                  onChange={event => this.changeContentInput(event)}/>
 
-                 Tag: < input
+                 {/* Tag: < input
                  type="text"
                  value={this.showTagName()}
                  onChange={event => this.changeTagInput(event)}
-                 />
+                 /> */}
 
                 < input type='submit' />
              </form>
