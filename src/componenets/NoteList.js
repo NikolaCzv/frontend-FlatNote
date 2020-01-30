@@ -9,7 +9,6 @@ import { Image, List, Grid } from 'semantic-ui-react'
 class NoteList extends React.Component {
 
     render(){
-        console.log('afasf', this.props.user.login.notes.find(note => note.id === this.props.user.login.showNote))
         return  <Grid>
             <Grid.Column floated='left' width={5}>
                         <h4>Note List</h4>

@@ -48,7 +48,7 @@ class Login extends React.Component{
     render(){
         return(
             <div className='login'>
-                <Image src='https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png' size='small' circular/>
+                <Image src='https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png' size='medium' circular/>
                 <Form onSubmit={(event) => this.handleSubmit(event)}>
                     <h3>Login page</h3>
                     <input type="text"

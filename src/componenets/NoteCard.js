@@ -68,18 +68,6 @@ class NoteCard extends React.Component {
         })
     }
 
-    // changeTagInput = event => {
-    //     this.setState({
-    //         tags: event.target.value
-    //     })
-    // }
-
-    // showTagName = () => {
-    //     return this.state.tags.map(tag => tag.name)
-    // }
-
-
-
     render(){
         return(
          <div className="Card" >
@@ -94,12 +82,6 @@ class NoteCard extends React.Component {
                  Content: < TextArea type="text" 
                  value={this.state.content}
                  onChange={event => this.changeContentInput(event)}/>
-
-                 {/* Tag: < input
-                 type="text"
-                 value={this.showTagName()}
-                 onChange={event => this.changeTagInput(event)}
-                 /> */}
 
                 < input type='submit' />
              </Form>
